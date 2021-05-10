@@ -7,17 +7,17 @@ namespace BeeStatusChecker
 {
     public partial class Form1 : Form
     {
-        public List<Bee> Bees;
+        public List<Bee> Bees = new List<Bee>();
 
         private void GenerateBees()
         {
-            Bees = new List<Bee>();
             Bees.Add(new WorkerBee());
             Bees.Add(new WorkerBee());
             Bees.Add(new WorkerBee());
             Bees.Add(new QueenBee());
             Bees.Add(new QueenBee());
             Bees.Add(new QueenBee());
+            Bees.Add(new DroneBee());
             Bees.Add(new DroneBee());
             Bees.Add(new DroneBee());
             Bees.Add(new DroneBee());
@@ -51,11 +51,13 @@ namespace BeeStatusChecker
 
         private void btn_Dmg_Click(object sender, EventArgs e)
         {
+            var rand = new Random();
             foreach (var bee in Bees)
             {
-                bee.Damage(new Random().Next(0, 80));
+                var rndDmg = rand.Next(0, 80);
+                bee.Damage(rndDmg);
             }
-              DisplayBees();
+            DisplayBees();
         }
     }
 }

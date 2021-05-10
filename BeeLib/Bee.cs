@@ -23,7 +23,7 @@ namespace BeeLib
         public void Damage(int dmgper)
         {
             if (!Dead)
-                Health -= ((decimal)dmgper / 100) * Health;
+                Health = Math.Round(Health - ((decimal)dmgper / 100) * Health, 2);
         }
     }
 }
