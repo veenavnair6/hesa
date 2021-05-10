@@ -5,22 +5,27 @@ using System.Windows.Forms;
 
 namespace BeeStatusChecker
 {
-    public partial class Form1 : Form
+    public partial class Home : Form
     {
         public List<Bee> Bees = new List<Bee>();
 
         private void GenerateBees()
         {
-            Bees.Add(new WorkerBee());
-            Bees.Add(new WorkerBee());
-            Bees.Add(new WorkerBee());
-            Bees.Add(new QueenBee());
-            Bees.Add(new QueenBee());
-            Bees.Add(new QueenBee());
-            Bees.Add(new DroneBee());
-            Bees.Add(new DroneBee());
-            Bees.Add(new DroneBee());
-            Bees.Add(new DroneBee());
+            for (int i = 0; i <= 9; i++)
+            {
+                if (i % 3 == 0)
+                {
+                    Bees.Add(new QueenBee());
+                }
+                else if (i % 2 == 0)
+                {
+                    Bees.Add(new DroneBee());
+                }
+                else
+                {
+                    Bees.Add(new WorkerBee());
+                }
+            }
         }
 
         private void DisplayBees()
@@ -29,16 +34,22 @@ namespace BeeStatusChecker
             tbl_lyt.Controls.Clear();
             foreach (var bee in Bees)
             {
+                var text = string.Empty;
+                if (!bee.Dead)
+                    text = $"Bee {i} : {bee.Health}";
+                else
+                    text = $"Bee {i} : Dead";
                 Label lbl_bee = new Label
                 {
-                    Text = $"Bee{i} : {bee.Health}"
+
+                    Text = text
                 };
                 tbl_lyt.Controls.Add(lbl_bee);
                 i++;
             }
         }
 
-        public Form1()
+        public Home()
         {
             InitializeComponent();
         }

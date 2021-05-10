@@ -1,7 +1,7 @@
 ﻿
 namespace BeeStatusChecker
 {
-    partial class Form1
+    partial class Home
     {
         /// <summary>
         /// Required designer variable.
@@ -36,11 +36,11 @@ namespace BeeStatusChecker
             // btn_Dmg
             // 
             this.btn_Dmg.Location = new System.Drawing.Point(32, 40);
-            this.btn_Dmg.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_Dmg.Margin = new System.Windows.Forms.Padding(2);
             this.btn_Dmg.Name = "btn_Dmg";
             this.btn_Dmg.Size = new System.Drawing.Size(104, 36);
             this.btn_Dmg.TabIndex = 1;
-            this.btn_Dmg.Text = "Damage";
+            this.btn_Dmg.Text = "Attack \'Em Bees!";
             this.btn_Dmg.UseVisualStyleBackColor = true;
             this.btn_Dmg.Click += new System.EventHandler(this.btn_Dmg_Click);
             // 
@@ -61,16 +61,16 @@ namespace BeeStatusChecker
             this.tbl_lyt.Size = new System.Drawing.Size(437, 201);
             this.tbl_lyt.TabIndex = 2;
             // 
-            // Form1
+            // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(600, 366);
             this.Controls.Add(this.tbl_lyt);
             this.Controls.Add(this.btn_Dmg);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Name = "Home";
+            this.Text = "Bee Killer";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
 
